@@ -1,20 +1,18 @@
-functions
-
-can be simple as
+// functions
+// can be simple as
 
 let a = function() { // this is anonymous
 }
 
 a // prints function: a
 
-also
+// also.
 
 function a() {
 
 }
 
 a // prints function: a
-
 
 (function a() {
   4
