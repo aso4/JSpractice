@@ -34,3 +34,53 @@ let a = (value, valuetwo) => { return value + valuetwo }
 
 let arr = [5, 10, 15]
 a(...arr) // spread syntax
+
+// pass function into function call
+a(a(3, 5), a(1, 2)) // returns 11
+
+// Classes
+let Animal = function(species, sound) {
+  this.species = species
+  this.sound = sound
+}
+
+let Dog = new Animal('dog', 'bark')
+
+Dog.species // returns dog
+
+// prototype allows for auto-overriding of parent class methods, if they exist
+Animal.prototype.food = ''
+
+Dog.food = 'Bones'
+
+Dog.food // returns Bones
+
+Array.prototype.sum = function() {
+  return "sample return statement"
+}
+
+let arr = [1,2,3]
+arr.sum() // returns "sample return statement"
+
+// using object notation. hash
+let Animal = {
+  name: 'foo',
+  sound: 'bar'
+}
+
+Animal.name // returns foo
+
+let Dog = new Animal() // doesn't work with object notation
+
+typeof(Animal) // returns 'object'
+
+let Animal2 = function(name, sound) {
+  this.name = name
+  this.sound = sound
+}
+
+typeof(Animal2) // returns function
+
+let Dog = new Animal2('dog', 'woof')
+typeof(Dog) // returns object
+
