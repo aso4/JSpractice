@@ -1,4 +1,4 @@
-// functions
+/* functions */
 // can be simple as
 
 let a = function() { // this is anonymous
@@ -6,7 +6,7 @@ let a = function() { // this is anonymous
 
 a // prints function: a
 
-// also.
+/* also */
 
 function a() {
 
@@ -24,7 +24,7 @@ a // prints function: a
 
 (() => { return 4 })() // wrapped and called
 
-// params
+/* params */
 let a = (value) => { return value }
 
 // params are optional, can still call a()
@@ -38,7 +38,7 @@ a(...arr) // spread syntax
 // pass function into function call
 a(a(3, 5), a(1, 2)) // returns 11
 
-// Classes
+/* Classes */
 let Animal = function(species, sound) {
   this.species = species
   this.sound = sound
@@ -62,7 +62,7 @@ Array.prototype.sum = function() {
 let arr = [1,2,3]
 arr.sum() // returns "sample return statement"
 
-// using object notation. hash
+/* using object notation. hash */
 let Animal = {
   name: 'foo',
   sound: 'bar'
@@ -84,7 +84,7 @@ typeof(Animal2) // returns function
 let Dog = new Animal2('dog', 'woof')
 typeof(Dog) // returns object
 
-// Class notation
+/* Class notation */
 class Animal {
   constructor(name, sound) { // pre-defined in class
     this.name = name
