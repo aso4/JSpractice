@@ -84,3 +84,28 @@ typeof(Animal2) // returns function
 let Dog = new Animal2('dog', 'woof')
 typeof(Dog) // returns object
 
+// Class notation
+class Animal {
+  constructor(name, sound) { // pre-defined in class
+    this.name = name
+    this.sound = sound
+  }
+  
+  speak() {
+    return this.sound
+  }
+}
+
+let Dog = new Animal('dog', 'bark')
+
+Dog // returns Animal()
+
+console.log(typeof(Animal)) // returns function
+
+Dog.speak() // returns bark
+
+// can define functions after class is defined
+Dog.bite = function() {
+  console.log("bitten")
+}
+
