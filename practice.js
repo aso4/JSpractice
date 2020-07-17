@@ -109,3 +109,20 @@ Dog.bite = function() {
   console.log("bitten")
 }
 
+/* using extends */
+class Animal {
+  constructor(name, sound) {
+    this.name = name;
+    this.sound = sound;
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, sound) {
+    super(name, sound)
+  }
+}
+
+let dog = new Dog('Spot', 'woof')
+
+dog.name // returns Spot
