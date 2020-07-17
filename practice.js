@@ -126,3 +126,53 @@ class Dog extends Animal {
 let dog = new Dog('Spot', 'woof')
 
 dog.name // returns Spot
+
+/* addressing 'this' reserved word */
+
+class Box {
+  constructor(side) {
+    this.side = side;
+  }
+  
+  volume() {
+    return Math.pow(this.side, 3); // can't be accessed via just "side"
+  }
+}
+
+let box = new Box(5)
+box.volume // returns 125
+
+/* challenge - let Bird be an object with a function fly that returns true */
+let Bird = {
+    fly() {
+        return true;
+    }
+}
+
+/* module exports and require. addressing in repl */
+// util.js
+module.exports = {
+  saySomething: function(message) { // : sets as property of export
+    console.log(message)
+  }
+}
+
+// index.js
+let Util = require('./util')
+let Data = require('./data')
+Util.saySomething("I'm giving up on you")
+Util.saySomething(Data.name) // prints Evgeny
+
+console.log(Data) // prints json as json, conversion or serialization needed
+
+// data.json
+{ "name" : "Evgeny", "hobbies": "JavaScript" }
+
+// continued
+import {Dog, Cat} from ('./animals') // import multiple exports from file
+
+// import non-default exports
+import {Dog} from ('./animals')
+
+// local import
+import Animal from ('./animals')
