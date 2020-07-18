@@ -171,8 +171,9 @@ console.log(Data) // prints json as json, conversion or serialization needed
 // continued
 import {Dog, Cat} from ('./animals') // import multiple exports from file
 
-// import non-default exports
+/* import non-default exports */
 import {Dog} from ('./animals')
 
-// local import
+/* local import */
 import Animal from ('./animals')
+
