@@ -8,6 +8,24 @@
   </head>
   <body>
     <h1>Welcome!</h1>
+    <div id="something" class="info">
+      foo: bar
+      bar: baz
+    </div>
+    <div class="info">
+      something else
+    </div>
+    <script>
+      var elem = document.getElementById('something');
+
+      elem.style.color = 'red';
+
+      var elems = document.getElementsByClassName('info');
+
+      for (var elem of elems) {
+        elem.style.color = 'green';
+      }
+    </script>
     <!-- script executes in top-down order -->
     <script>document.write('hello')</script>
     <script src="script.js"></script>
