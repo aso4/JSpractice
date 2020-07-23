@@ -17,6 +17,6 @@ function measureStrength() {
   } else {
     strengthLevel = 'Weak';
   }
-
+  strengthElem.className = strengthLevel.toLowerCase().replace(' ', '-');
   strengthElem.innerText = strengthLevel;
 }
