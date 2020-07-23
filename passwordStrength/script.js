@@ -6,10 +6,16 @@ function measureStrength() {
 
   let password = passwordElem.value;
 
-  if (password.length >= 8 && (password.length < 12)) {
-    strengthLevel = 'Strong';
-  } else if (password.length >= 12) {
-    strengthLevel = 'Very Strong';
+  var numberRegex = /\d/
+
+  if (numberRegex.test(password)) {
+    if (password.length >= 8 && (password.length < 12)) {
+      strengthLevel = 'Strong';
+    } else if (password.length >= 12) {
+      strengthLevel = 'Very Strong';
+    }
+  } else {
+    strengthLevel = 'Weak';
   }
 
   strengthElem.innerText = strengthLevel;
